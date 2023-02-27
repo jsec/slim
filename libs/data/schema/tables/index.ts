@@ -1,0 +1,9 @@
+export { OrganizationTable } from './organization.table';
+export { LeagueTable } from './league.table';
+export { SeasonTable } from './season.table';
+export { RaceTable } from './race.table';
+export { DriverTable } from './driver.table';
+export { RegistrationTable } from './registration.table';
+export { IncidentTable } from './incident.table';
+export { RulingTable } from './ruling.table';
+export { PenaltyTable } from './penalty.table';

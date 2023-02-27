@@ -13,13 +13,23 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
     "eslint-config-custom": "workspace:*",
+    "husky": "8.0.3",
+    "lint-staged": "13.1.1",
     "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
-  "packageManager": "pnpm@7.26.3"
+  "packageManager": "pnpm@7.26.3",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  }
 }
