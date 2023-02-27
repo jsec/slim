@@ -7,15 +7,13 @@ import {
     PostgresDialect,
     FileMigrationProvider
 } from 'kysely'
-import Database from '../schema/database'
+import { Database } from './schema/database'
+import { config } from './config'
 
 async function migrateToLatest() {
     const db = new Kysely<Database>({
         dialect: new PostgresDialect({
-            pool: new Pool({
-                host: 'localhost',
-                database: 'kysely_test',
-            })
+            pool: new Pool(config.database)
         }),
     })
 
@@ -24,7 +22,7 @@ async function migrateToLatest() {
         provider: new FileMigrationProvider({
             fs,
             path,
-            migrationFolder: 'some/path/to/migrations',
+            migrationFolder: path.join(__dirname, 'migrations')
         })
     })
 
@@ -39,7 +37,7 @@ async function migrateToLatest() {
     })
 
     if (error) {
-        console.error('failed to migrate')
+        console.error('MIGRATION FAILED');
         console.error(error)
         process.exit(1)
     }

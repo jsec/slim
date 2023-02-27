@@ -1,6 +1,6 @@
 import { DriverTable, IncidentTable, LeagueTable, OrganizationTable, PenaltyTable, RaceTable, RegistrationTable, RulingTable, SeasonTable } from "./tables";
 
-interface Database {
+export interface Database {
     league: LeagueTable
     organization: OrganizationTable
     season: SeasonTable
@@ -11,5 +11,3 @@ interface Database {
     ruling: RulingTable
     penalty: PenaltyTable
 }
-
-export default Database;

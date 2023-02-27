@@ -5,4 +5,5 @@ export interface RulingTable {
     incident_id: string
     steward_id: string
     penalty_id: string
+    explanation: string
 };

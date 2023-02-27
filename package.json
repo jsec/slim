@@ -25,11 +25,11 @@
   },
   "packageManager": "pnpm@7.26.3",
   "config": {
-      "commitizen": {
-          "path": "./node_modules/cz-conventional-changelog"
-      }
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "lint-staged": {
-      "*.ts": "eslint --fix"
+    "*.ts": "eslint --fix"
   }
 }

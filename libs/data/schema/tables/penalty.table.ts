@@ -5,5 +5,5 @@ export interface PenaltyTable {
     name: string
     description: string
     time_in_seconds: number
-    penalty_points: string
+    penalty_points: number
 }
