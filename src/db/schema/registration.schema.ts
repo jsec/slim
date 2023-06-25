@@ -1,6 +1,7 @@
-import { Ref, getModelForClass, prop } from "@typegoose/typegoose";
-import { Season } from "./season.schema";
-import { Driver } from "./driver.schema";
+import { getModelForClass, prop, Ref } from '@typegoose/typegoose';
+
+import { Driver } from './driver.schema';
+import { Season } from './season.schema';
 
 export class Registration {
     @prop({ ref: () => Season })
@@ -16,4 +17,5 @@ export class Registration {
     public category?: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const RegistrationModel = getModelForClass(Registration);

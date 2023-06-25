@@ -1,7 +1,8 @@
-import fastify from "fastify";
+import fastify from 'fastify';
 
 const server = fastify();
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 server.get('/ping', async (_request, _reply) => {
     return 'pong\n';
 });
