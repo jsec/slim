@@ -1,5 +1,6 @@
-import { Ref, getModelForClass, prop } from "@typegoose/typegoose";
-import { Registration } from "./registration.schema";
+import { getModelForClass, prop, type Ref } from '@typegoose/typegoose';
+
+import { Registration } from './registration.schema';
 
 export class Season {
     @prop()
@@ -9,7 +10,8 @@ export class Season {
     public description?: string;
 
     @prop({ ref: () => Registration })
-    public registrations!: Ref<Registration>[];
+    public registrations!: Array<Ref<Registration>>;
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const SeasonModel = getModelForClass(Season);

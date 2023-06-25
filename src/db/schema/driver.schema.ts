@@ -1,4 +1,4 @@
-import { getModelForClass, prop } from "@typegoose/typegoose";
+import { getModelForClass, prop } from '@typegoose/typegoose';
 
 export class Driver {
     @prop()
@@ -14,4 +14,5 @@ export class Driver {
     public driverId!: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const DriverModel = getModelForClass(Driver);
