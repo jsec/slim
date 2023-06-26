@@ -1,8 +1,9 @@
 import { getModelForClass, prop, type Ref } from '@typegoose/typegoose';
 
+import { ModelBase } from './base.schema';
 import { Registration } from './registration.schema';
 
-export class Season {
+export class Season extends ModelBase {
     @prop()
     public name!: string;
 

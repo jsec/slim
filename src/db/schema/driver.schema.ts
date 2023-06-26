@@ -1,6 +1,8 @@
 import { getModelForClass, prop } from '@typegoose/typegoose';
 
-export class Driver {
+import { ModelBase } from './base.schema';
+
+export class Driver extends ModelBase {
     @prop()
     public firstName!: string;
 
