@@ -3,7 +3,7 @@
   "extends": [
     "config:base"
   ],
-  "dependencyDashboard": false,
+  "dependencyDashboard": true,
   "packageRules": [
     {
       "matchPackagePatterns": ["*"],
@@ -20,6 +20,16 @@
       "matchPackageNames": ["ts-node", "typescript"],
       "groupName": "typescript dependencies",
       "groupSlug": "typescript"
+    },
+    {
+      "matchPackageNames": ["mongoose", "typegoose"],
+      "groupName": "database dependencies",
+      "groupSlug": "database"
+    },
+    {
+      "matchPackageNames": ["fastify*"],
+      "groupName": "api dependencies",
+      "groupSlug": "api"
     }
   ],
   "schedule": [
