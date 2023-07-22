@@ -1,3 +1,3 @@
-export { Driver } from './driver.schema';
-export { Registration } from './registration.schema';
-export { Season } from './season.schema';
+export { Driver, driverModel } from './driver.schema';
+export { Registration, registrationModel } from './registration.schema';
+export { Season, seasonModel } from './season.schema';

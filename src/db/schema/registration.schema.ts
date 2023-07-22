@@ -18,5 +18,4 @@ export class Registration extends ModelBase {
     public category?: number;
 }
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export const RegistrationModel = getModelForClass(Registration);
+export const registrationModel = getModelForClass(Registration);

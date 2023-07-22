@@ -14,5 +14,4 @@ export class Season extends ModelBase {
     public registrations!: Array<Ref<Registration>>;
 }
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export const SeasonModel = getModelForClass(Season);
+export const seasonModel = getModelForClass(Season);

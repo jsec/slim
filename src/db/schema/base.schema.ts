@@ -1,24 +1,6 @@
-import { ModelOptions, prop } from '@typegoose/typegoose';
-import { type Base } from '@typegoose/typegoose/lib/defaultClasses';
-import { type Types } from 'mongoose';
+/* eslint-disable @typescript-eslint/no-unsafe-declaration-merging */
+import { type Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 
-// eslint-disable-next-line new-cap
-@ModelOptions({
-    schemaOptions: {
-        timestamps: {
-            updatedAt: 'updatedOn',
-            createdAt: 'createdOn'
-        },
-        toObject: { virtuals: true }
-    }
-})
-export class ModelBase implements Base {
-    @prop()
-    public createdOn!: Date;
-
-    @prop()
-    public updatedOn!: Date;
-
-    _id!: Types.ObjectId;
-    id!: string;
-}
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+export interface ModelBase extends Base {}
+export class ModelBase extends TimeStamps {}

@@ -16,5 +16,4 @@ export class Driver extends ModelBase {
     public driverId!: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export const DriverModel = getModelForClass(Driver);
+export const driverModel = getModelForClass(Driver);
