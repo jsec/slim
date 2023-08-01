@@ -39,6 +39,10 @@
       "groupSlug": "api"
     }
   ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "recreateClosed": true
+  },
   "schedule": [
     "every weekend"
   ]
