@@ -1,7 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    ":dependencyDashboard",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":ignoreModulesAndTests",
+    "group:monorepos",
+    "group:recommended",
+    "replacements:all",
+    "workarounds:all"
   ],
   "dependencyDashboard": true,
   "packageRules": [
@@ -33,6 +40,6 @@
     }
   ],
   "schedule": [
-    "before 6am on the first day of the month"
+    "every weekend"
   ]
 }
