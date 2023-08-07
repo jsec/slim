@@ -6,8 +6,5 @@ module.exports = {
     },
     extends: [
         "@jarsec/eslint-config"
-    ],
-    rules: {
-        "@typescript-eslint/ban-types": "off"
-    }
+    ]
 }
