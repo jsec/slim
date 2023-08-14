@@ -1,19 +1,23 @@
-import { getModelForClass, prop } from '@typegoose/typegoose';
+import {
+    type ColumnType,
+    type Generated,
+    type Insertable,
+    type Selectable,
+    type Updateable
+} from 'kysely';
 
-import { ModelBase } from './base.schema';
+export type DriverTable = {
+    id: Generated<number>;
+    firstName: string;
+    lastName: string;
+    // TODO: Extract this into an array
+    // Potentially a pivot table, driver_identifiers?
+    // driver_id, external_id, source
+    externalIds: string;
+    createdOn: Generated<Date>;
+    updatedOn: ColumnType<Date, string | undefined, never>;
+};
 
-export class Driver extends ModelBase {
-    @prop()
-    public firstName!: string;
-
-    @prop()
-    public lastName!: string;
-
-    @prop()
-    public shortName?: string;
-
-    @prop()
-    public driverId!: string;
-}
-
-export const driverModel = getModelForClass(Driver);
+export type Driver = Selectable<DriverTable>;
+export type NewDriver = Insertable<DriverTable>;
+export type DriverUpdate = Updateable<DriverTable>;

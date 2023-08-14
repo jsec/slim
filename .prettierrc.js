@@ -1,3 +1,4 @@
 module.exports = {
-    ...require('@jarsec/prettier-config')
+    ...require('@jarsec/prettier-config'),
+    printWidth: 100
 }

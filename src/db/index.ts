@@ -1,11 +1,7 @@
-import mongoose from 'mongoose';
+import { type DriverTable, type RegistrationTable, type SeasonTable } from './schema';
 
-export * from './repository';
-
-export const connect = async () => {
-    try {
-        await mongoose.connect('abcd123');
-    } catch (err) {
-        console.error('Error connecting to database - ', err);
-    }
+export type Database = {
+    driver: DriverTable;
+    registration: RegistrationTable;
+    season: SeasonTable;
 };

@@ -1,17 +1,20 @@
-import { getModelForClass, prop, type Ref } from '@typegoose/typegoose';
+import {
+    type ColumnType,
+    type Generated,
+    type Insertable,
+    type Selectable,
+    type Updateable
+} from 'kysely';
 
-import { ModelBase } from './base.schema';
-import { Registration } from './registration.schema';
+export type SeasonTable = {
+    id: Generated<number>;
+    organizationId: number;
+    name: string;
+    description: string;
+    createdOn: Generated<Date>;
+    updatedOn: ColumnType<Date, string | undefined, never>;
+};
 
-export class Season extends ModelBase {
-    @prop()
-    public name!: string;
-
-    @prop()
-    public description?: string;
-
-    @prop({ ref: () => Registration })
-    public registrations!: Array<Ref<Registration>>;
-}
-
-export const seasonModel = getModelForClass(Season);
+export type Season = Selectable<SeasonTable>;
+export type NewSeason = Insertable<SeasonTable>;
+export type SeasonUpdate = Updateable<SeasonTable>;
