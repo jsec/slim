@@ -13,9 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "fastify": "4.18.0",
-    "kysely": "^0.26.1",
-    "neverthrow": "^6.0.0",
-    "pg": "^8.11.2"
+    "kysely": "0.26.1",
+    "neverthrow": "6.0.0",
+    "pg": "8.11.2"
   },
   "devDependencies": {
     "@jarsec/eslint-config": "2.0.0",
