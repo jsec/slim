@@ -1,11 +1,15 @@
-import mongoose from 'mongoose';
+import { Kysely, PostgresDialect } from 'kysely';
+import { Pool } from 'pg';
 
-export * from './repository';
+import { type Database } from './schema';
 
-export const connect = async () => {
-    try {
-        await mongoose.connect('abcd123');
-    } catch (err) {
-        console.error('Error connecting to database - ', err);
-    }
-};
+export const db = new Kysely<Database>({
+    dialect: new PostgresDialect({
+        pool: new Pool({
+            host: 'localhost',
+            database: 'slim',
+            port: 5432,
+            user: 'postgres'
+        })
+    })
+});

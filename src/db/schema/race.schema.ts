@@ -6,15 +6,16 @@ import {
     type Updateable
 } from 'kysely';
 
-export type SeasonTable = {
+export type RaceTable = {
     id: Generated<number>;
-    organizationId: number;
-    name: string;
+    seasonId: number;
+    week: number;
+    trackName: string;
     description: string;
     createdOn: Generated<Date>;
     updatedOn: ColumnType<Date, string | undefined, never>;
 };
 
-export type Season = Selectable<SeasonTable>;
-export type NewSeason = Insertable<SeasonTable>;
-export type SeasonUpdate = Updateable<SeasonTable>;
+export type Race = Selectable<RaceTable>;
+export type NewRace = Insertable<RaceTable>;
+export type RaceUpdate = Updateable<RaceTable>;

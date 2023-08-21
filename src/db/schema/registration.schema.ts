@@ -1,21 +1,20 @@
-import { getModelForClass, prop, Ref } from '@typegoose/typegoose';
+import {
+    type ColumnType,
+    type Generated,
+    type Insertable,
+    type Selectable,
+    type Updateable
+} from 'kysely';
 
-import { ModelBase } from './base.schema';
-import { Driver } from './driver.schema';
-import { Season } from './season.schema';
+export type RegistrationTable = {
+    id: Generated<number>;
+    seasonId: number;
+    driverId: number;
+    driverNumber: number;
+    createdOn: Generated<Date>;
+    updatedOn: ColumnType<Date, string | undefined, never>;
+};
 
-export class Registration extends ModelBase {
-    @prop({ ref: () => Season })
-    public seasonId!: Ref<Season>;
-
-    @prop({ ref: () => Driver })
-    public driverId!: Ref<Driver>;
-
-    @prop()
-    public carNumber!: number;
-
-    @prop()
-    public category?: number;
-}
-
-export const registrationModel = getModelForClass(Registration);
+export type Registration = Selectable<RegistrationTable>;
+export type NewRegistration = Insertable<RegistrationTable>;
+export type RegistrationUpdate = Updateable<RegistrationTable>;
