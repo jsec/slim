@@ -9,7 +9,7 @@ import {
 export type RaceTable = {
     id: Generated<number>;
     seasonId: number;
-    sequence: number;
+    week: number;
     trackName: string;
     description: string;
     createdOn: Generated<Date>;

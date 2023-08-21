@@ -6,7 +6,10 @@
   "scripts": {
     "prepare": "husky install",
     "api:run": "tsx ./src/api/index.ts",
-    "lint": "eslint --ext .ts . --max-warnings 0"
+    "lint": "eslint --ext .ts . --max-warnings 0",
+    "migrate:make": "node -r ts-node/register scripts/migrate.ts create",
+    "migrate:latest": "node -r ts-node/register scripts/migrate.ts latest",
+    "migrate:down": "node -r ts-node/register scripts/migrate.ts down"
   },
   "keywords": [],
   "author": "",
@@ -22,15 +25,16 @@
     "@jarsec/prettier-config": "1.1.0",
     "@jarsec/tsconfig": "1.0.0",
     "@types/node": "20.4.8",
+    "@types/pg": "8.10.2",
     "@typescript-eslint/parser": "6.0.0",
-    "ava": "^5.3.1",
+    "ava": "5.3.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.46.0",
     "husky": "8.0.3",
+    "kysely-migration-cli": "0.2.1",
     "lint-staged": "13.2.3",
     "prettier": "3.0.1",
     "ts-node": "10.9.1",
-    "tsx": "3.12.7",
     "typescript": "5.1.6"
   },
   "engines": {

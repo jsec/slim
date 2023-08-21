@@ -1,21 +1,15 @@
-import {
-    type DriverTable,
-    type IncidentTable,
-    type OrganizationTable,
-    type PenaltyTable,
-    type RaceTable,
-    type RegistrationTable,
-    type RulingTable,
-    type SeasonTable
-} from './schema';
+import { Kysely, PostgresDialect } from 'kysely';
+import { Pool } from 'pg';
 
-export type Database = {
-    driver: DriverTable;
-    incident: IncidentTable;
-    organization: OrganizationTable;
-    penalty: PenaltyTable;
-    race: RaceTable;
-    registration: RegistrationTable;
-    ruling: RulingTable;
-    season: SeasonTable;
-};
+import { type Database } from './schema';
+
+export const db = new Kysely<Database>({
+    dialect: new PostgresDialect({
+        pool: new Pool({
+            host: 'localhost',
+            database: 'slim',
+            port: 5432,
+            user: 'postgres'
+        })
+    })
+});
