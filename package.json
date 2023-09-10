@@ -38,7 +38,7 @@
     "typescript": "5.2.2"
   },
   "engines": {
-    "node": "20.5.1"
+    "node": "20.6.1"
   },
   "ava": {
     "extensions": {
