@@ -33,7 +33,7 @@ export type {
 export type { NewRuling, Ruling, RulingTable, RulingUpdate } from './ruling.schema';
 export type { NewSeason, Season, SeasonTable, SeasonUpdate } from './season.schema';
 
-export type Database = {
+export interface Database {
     driver: DriverTable;
     driverIdentifier: DriverIdentifierTable;
     incident: IncidentTable;
@@ -43,4 +43,4 @@ export type Database = {
     registration: RegistrationTable;
     ruling: RulingTable;
     season: SeasonTable;
-};
+}

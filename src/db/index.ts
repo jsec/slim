@@ -9,7 +9,8 @@ export const db = new Kysely<Database>({
             host: 'localhost',
             database: 'slim',
             port: 5432,
-            user: 'postgres'
+            user: 'postgres',
+            password: 'postgres'
         })
     })
 });

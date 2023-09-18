@@ -6,14 +6,14 @@ import {
     type Updateable
 } from 'kysely';
 
-export type RegistrationTable = {
+export interface RegistrationTable {
     id: Generated<number>;
     seasonId: number;
     driverId: number;
     driverNumber: number;
     createdOn: Generated<Date>;
     updatedOn: ColumnType<Date, string | undefined, never>;
-};
+}
 
 export type Registration = Selectable<RegistrationTable>;
 export type NewRegistration = Insertable<RegistrationTable>;

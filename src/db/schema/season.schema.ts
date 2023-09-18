@@ -6,14 +6,14 @@ import {
     type Updateable
 } from 'kysely';
 
-export type SeasonTable = {
+export interface SeasonTable {
     id: Generated<number>;
     organizationId: number;
     name: string;
     description: string;
     createdOn: Generated<Date>;
     updatedOn: ColumnType<Date, string | undefined, never>;
-};
+}
 
 export type Season = Selectable<SeasonTable>;
 export type NewSeason = Insertable<SeasonTable>;

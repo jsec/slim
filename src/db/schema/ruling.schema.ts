@@ -6,7 +6,7 @@ import {
     type Updateable
 } from 'kysely';
 
-export type RulingTable = {
+export interface RulingTable {
     id: Generated<number>;
     stewardId: number;
     incidentId: number;
@@ -14,7 +14,7 @@ export type RulingTable = {
     summary: string;
     createdOn: Generated<Date>;
     updatedOn: ColumnType<Date, string | undefined, never>;
-};
+}
 
 export type Ruling = Selectable<RulingTable>;
 export type NewRuling = Insertable<RulingTable>;

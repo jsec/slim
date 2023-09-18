@@ -6,14 +6,14 @@ import {
     type Updateable
 } from 'kysely';
 
-export type DriverIdentifierTable = {
+export interface DriverIdentifierTable {
     id: Generated<number>;
     driverId: number;
     identifier: string;
     source: string;
     createdOn: Generated<Date>;
     updatedOn: ColumnType<Date, string | undefined, never>;
-};
+}
 
 export type DriverIdentifier = Selectable<DriverIdentifierTable>;
 export type NewDriverIdentifier = Insertable<DriverIdentifierTable>;

@@ -2,13 +2,12 @@ import fastify from 'fastify';
 
 const server = fastify();
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 server.get('/ping', async (_request, _reply) => {
     return 'pong\n';
 });
 
 server.listen({ port: 3000 }, (err, address) => {
-    if (err) {
+    if (err != null) {
         console.error(err);
         process.exit(1);
     }

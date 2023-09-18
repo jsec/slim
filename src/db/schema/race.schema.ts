@@ -6,7 +6,7 @@ import {
     type Updateable
 } from 'kysely';
 
-export type RaceTable = {
+export interface RaceTable {
     id: Generated<number>;
     seasonId: number;
     week: number;
@@ -14,7 +14,7 @@ export type RaceTable = {
     description: string;
     createdOn: Generated<Date>;
     updatedOn: ColumnType<Date, string | undefined, never>;
-};
+}
 
 export type Race = Selectable<RaceTable>;
 export type NewRace = Insertable<RaceTable>;

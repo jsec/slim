@@ -6,7 +6,7 @@ import {
     type Updateable
 } from 'kysely';
 
-export type PenaltyTable = {
+export interface PenaltyTable {
     id: Generated<number>;
     organizationId: number;
     type: string;
@@ -14,7 +14,7 @@ export type PenaltyTable = {
     points: number;
     createdOn: Generated<Date>;
     updatedOn: ColumnType<Date, string | undefined, never>;
-};
+}
 
 export type Penalty = Selectable<PenaltyTable>;
 export type NewPenalty = Insertable<PenaltyTable>;
