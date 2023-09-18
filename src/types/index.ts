@@ -1,4 +1,4 @@
 export type ExternalIdentifier = {
-    value: string;
-    source: string;
+  value: string;
+  source: string;
 };

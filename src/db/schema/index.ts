@@ -10,37 +10,37 @@ import { type SeasonTable } from './season.schema';
 
 export type { Driver, DriverTable, DriverUpdate, NewDriver } from './driver.schema';
 export type {
-    DriverIdentifier,
-    DriverIdentifierTable,
-    DriverIdentifierUpdate,
-    NewDriverIdentifier
+  DriverIdentifier,
+  DriverIdentifierTable,
+  DriverIdentifierUpdate,
+  NewDriverIdentifier
 } from './driver-identifier.schema';
 export type { Incident, IncidentTable, IncidentUpdate, NewIncident } from './incident.schema';
 export type {
-    NewOrganization,
-    Organization,
-    OrganizationTable,
-    OrganizationUpdate
+  NewOrganization,
+  Organization,
+  OrganizationTable,
+  OrganizationUpdate
 } from './organization.schema';
 export type { NewPenalty, Penalty, PenaltyTable, PenaltyUpdate } from './penalty.schema';
 export type { NewRace, Race, RaceTable, RaceUpdate } from './race.schema';
 export type {
-    NewRegistration,
-    Registration,
-    RegistrationTable,
-    RegistrationUpdate
+  NewRegistration,
+  Registration,
+  RegistrationTable,
+  RegistrationUpdate
 } from './registration.schema';
 export type { NewRuling, Ruling, RulingTable, RulingUpdate } from './ruling.schema';
 export type { NewSeason, Season, SeasonTable, SeasonUpdate } from './season.schema';
 
-export interface Database {
-    driver: DriverTable;
-    driverIdentifier: DriverIdentifierTable;
-    incident: IncidentTable;
-    organization: OrganizationTable;
-    penalty: PenaltyTable;
-    race: RaceTable;
-    registration: RegistrationTable;
-    ruling: RulingTable;
-    season: SeasonTable;
-}
+export type Database = {
+  driver: DriverTable;
+  driverIdentifier: DriverIdentifierTable;
+  incident: IncidentTable;
+  organization: OrganizationTable;
+  penalty: PenaltyTable;
+  race: RaceTable;
+  registration: RegistrationTable;
+  ruling: RulingTable;
+  season: SeasonTable;
+};
