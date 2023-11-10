@@ -7,12 +7,12 @@ import {
 } from 'kysely';
 
 export type RulingTable = {
+  createdOn: Generated<Date>;
   id: Generated<number>;
-  stewardId: number;
   incidentId: number;
   penaltyId: number;
+  stewardId: number;
   summary: string;
-  createdOn: Generated<Date>;
   updatedOn: ColumnType<Date, string | undefined, never>;
 };
 

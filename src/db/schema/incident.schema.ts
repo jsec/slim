@@ -7,15 +7,14 @@ import {
 } from 'kysely';
 
 export type IncidentTable = {
+  createdOn: Generated<Date>;
+  description: string;
   id: Generated<number>;
-  raceId: number;
-  reportingDriverId: number;
-  offendingDriverId: number;
   lapNumber: number;
   location: string;
-
-  description: string;
-  createdOn: Generated<Date>;
+  offendingDriverId: number;
+  raceId: number;
+  reportingDriverId: number;
   updatedOn: ColumnType<Date, string | undefined, never>;
 };
 

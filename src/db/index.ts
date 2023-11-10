@@ -6,11 +6,11 @@ import { type Database } from './schema';
 export const db = new Kysely<Database>({
   dialect: new PostgresDialect({
     pool: new Pool({
-      host: 'localhost',
       database: 'slim',
+      host: 'localhost',
+      password: 'postgres',
       port: 5432,
-      user: 'postgres',
-      password: 'postgres'
+      user: 'postgres'
     })
   })
 });

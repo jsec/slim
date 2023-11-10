@@ -7,11 +7,11 @@ import {
 } from 'kysely';
 
 export type DriverIdentifierTable = {
-  id: Generated<number>;
+  createdOn: Generated<Date>;
   driverId: number;
+  id: Generated<number>;
   identifier: string;
   source: string;
-  createdOn: Generated<Date>;
   updatedOn: ColumnType<Date, string | undefined, never>;
 };
 

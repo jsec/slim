@@ -7,14 +7,11 @@ import {
 } from 'kysely';
 
 export type DriverTable = {
-  id: Generated<number>;
-  firstName: string;
-  lastName: string;
-  // TODO: Extract this into an array
-  // Potentially a pivot table, driver_identifiers?
-  // driver_id, external_id, source
-  externalIds: string;
   createdOn: Generated<Date>;
+  externalIds: string;
+  firstName: string;
+  id: Generated<number>;
+  lastName: string;
   updatedOn: ColumnType<Date, string | undefined, never>;
 };
 

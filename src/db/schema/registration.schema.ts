@@ -7,11 +7,11 @@ import {
 } from 'kysely';
 
 export type RegistrationTable = {
-  id: Generated<number>;
-  seasonId: number;
+  createdOn: Generated<Date>;
   driverId: number;
   driverNumber: number;
-  createdOn: Generated<Date>;
+  id: Generated<number>;
+  seasonId: number;
   updatedOn: ColumnType<Date, string | undefined, never>;
 };
 

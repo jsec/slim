@@ -7,11 +7,11 @@ import {
 } from 'kysely';
 
 export type SeasonTable = {
-  id: Generated<number>;
-  organizationId: number;
-  name: string;
-  description: string;
   createdOn: Generated<Date>;
+  description: string;
+  id: Generated<number>;
+  name: string;
+  organizationId: number;
   updatedOn: ColumnType<Date, string | undefined, never>;
 };
 

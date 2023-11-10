@@ -7,13 +7,13 @@ import {
 } from 'kysely';
 
 export type RaceTable = {
+  createdOn: Generated<Date>;
+  description: string;
   id: Generated<number>;
   seasonId: number;
-  week: number;
   trackName: string;
-  description: string;
-  createdOn: Generated<Date>;
   updatedOn: ColumnType<Date, string | undefined, never>;
+  week: number;
 };
 
 export type Race = Selectable<RaceTable>;

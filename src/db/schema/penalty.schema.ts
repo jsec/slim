@@ -7,12 +7,12 @@ import {
 } from 'kysely';
 
 export type PenaltyTable = {
+  createdOn: Generated<Date>;
+  description: string;
   id: Generated<number>;
   organizationId: number;
-  type: string;
-  description: string;
   points: number;
-  createdOn: Generated<Date>;
+  type: string;
   updatedOn: ColumnType<Date, string | undefined, never>;
 };
 

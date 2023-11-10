@@ -12,6 +12,7 @@ function getSeasonById(id: number): ResultAsync<Season, unknown> {
 
 function deleteSeasonById(id: number): ResultAsync<DeleteResult, unknown> {
   const query = db.deleteFrom('season').where('id', '=', id).executeTakeFirstOrThrow();
+
   return ResultAsync.fromPromise(query, err => err);
 }
 

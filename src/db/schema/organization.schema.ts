@@ -7,11 +7,11 @@ import {
 } from 'kysely';
 
 export type OrganizationTable = {
-  id: Generated<number>;
-  name: string;
+  createdOn: Generated<Date>;
   description: string;
   email: string;
-  createdOn: Generated<Date>;
+  id: Generated<number>;
+  name: string;
   updatedOn: ColumnType<Date, string | undefined, never>;
 };
 
